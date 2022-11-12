@@ -7,11 +7,12 @@ public class Main {
             noi dorim sa facem o copie a obiectului student1, numita student2
             apoi sa modificam copia respectiva
         */
-        Student student2 = new Student(student1);
+
+        Student student2 = student1;
 
         student2.setName("Cezar");
         student2.setSurname("Ghiu");
-
+        
         /*
             trebuie sa afiseze
             Name: Decebal
@@ -29,3 +30,4 @@ public class Main {
         student2.show();
     }
 }
+
