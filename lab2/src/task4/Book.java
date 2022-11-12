@@ -13,6 +13,7 @@ public class Book {
 
     public String toString() {
         // TODO
-        return null;
+        return title + ", written by " + author + ", published in " + year;
+        // return null;
     }
 }
