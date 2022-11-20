@@ -1,31 +1,42 @@
+import java.util.Random;
+
 public class Dealership {
     class BrandOffer implements Offer {
         public int getDiscount(Car car) {
-            if (car.getType().equals("MERCEDES")) {
-                return car.getPrice() * 5 / 100;
-            } else if (car.getType().equals("FIAT")) {
-                return car.getPrice() * 10 / 100;
-            } else {
-                return car.getPrice() * 15 / 100;
+            switch (car.getType()) {
+                case MERCEDES:
+                    return car.getPrice() * 5 / 100;
+                case FIAT:
+                    return car.getPrice() * 10 / 100;
+                case SKODA:
+                    return car.getPrice() * 15 / 100;
+                default:
+                    return 0;
             }
         }
     }
 
     class DealerOffer implements Offer {
         public int getDiscount(Car car) {
-            if (car.getType().equals("MERCEDES")) {
-                return 300 * (2022 - car.getYear());
-            } else if (car.getType().equals("FIAT")) {
-                return 100 * (2022 - car.getYear());
-            } else {
-                return 150 * (2022 - car.getYear());
+            switch (car.getType()) {
+                case MERCEDES:
+                    return 300 * (2022 - car.getYear());
+                case FIAT:
+                    return 100 * (2022 - car.getYear());
+                case SKODA:
+                    return 150 * (2022 - car.getYear());
+                default:
+                    return 0;
             }
         }
     }
 
     class SpecialOffer implements Offer {
+        private static Random rand = new Random(20);
+        int random = rand.nextInt(1000);
+
         public int getDiscount(Car car) {
-            return Main.rand.nextInt(1000);
+            return random;
         }
     }
 

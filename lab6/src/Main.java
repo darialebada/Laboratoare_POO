@@ -48,13 +48,14 @@ public class Main {
                 break;
             case 4:
                 ArrayList<Car> cars = new ArrayList<>();
+                cars.add(new Car(20000, Car.CarType.SKODA, 2019));
                 cars.add(new Car(30000, Car.CarType.MERCEDES, 2019));
                 cars.add(new Car(50000, Car.CarType.MERCEDES, 2021));
                 cars.add(new Car(10000, Car.CarType.FIAT, 2018));
-                cars.add(new Car(20000, Car.CarType.SKODA, 2019));
+
 
                 cars.forEach(System.out::println);
-                cars.removeIf((c) -> c.getPrice() > 2500);
+                cars.removeIf((c) -> c.getPrice() > 25000);
                 cars.forEach(System.out::println);
 
                 break;
